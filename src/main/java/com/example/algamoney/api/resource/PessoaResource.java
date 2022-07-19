@@ -52,7 +52,7 @@ public class PessoaResource {
 	
 	@GetMapping("/{codigo}")
     public ResponseEntity<Pessoa> buscarPeloCodigo(@PathVariable Long codigo){
-    	Pessoa pessoaEncontrada = pessoaRepository.findById(codigo).orElse(null);
+		Pessoa pessoaEncontrada = pessoaRepository.findById(codigo).orElse(null);
     	return pessoaEncontrada != null ? ResponseEntity.ok(pessoaEncontrada) : ResponseEntity.notFound().build();
     }
 	
